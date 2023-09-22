@@ -1,33 +1,34 @@
 import React from 'react';
-import '../Footer/Footer.css';
 
 const Footer = () => {
     return (
-        <footer>
-            <div class="footer">
-                <div class="footer-content">
-                    <p class="header">Serwis</p>
+        <footer className="bg-gray-800 text-gray-300 py-4">
+            <div className="container mx-auto flex flex-wrap justify-between items-center">
+                <div className="w-full lg:w-1/3 text-center lg:text-left mb-2 lg:mb-0">
+                    <h2 className="text-xl font-bold">WIS-SERWIS</h2>
+                    <p className="mt-2">
+                        <a href="mailto:biuro@wisserwis.com" className="hover:text-white">biuro@wisserwis.com</a> 
+                        <br />
+                        Telefon: 602 342 192
+                    </p>
                 </div>
-                <div class="footer-content">
-                    <p><a href="mailto:mail@gmail.com">mail@gmail.com </a> +48 000 000 000</p>
-                </div>
-                <div class="footer-content double">
-                    <div class="left">
-                        <a href="/nasza-oferta">NASZA OFERTA</a>
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Carreer</a>
+                <div className="w-full lg:w-1/3 mt-2 lg:mt-0">
+                    <div className="flex flex-col lg:flex-row justify-between lg:justify-start">
+                        <div className="mb-2 lg:mb-0">
+                            <a href="#" className="block mb-1 hover:text-white">Nasza Oferta</a>
+                            <a href="#" className="block mb-1 hover:text-white">O Nas</a>
+                            <a href="#" className="block hover:text-white">Kontakt</a>
+                        </div>
+                        <div className="ml-4">
+                            <a href="#" className="block hover:text-white">Facebook</a>
+                            <a href="#" className="block hover:text-white">Instagram</a>
+                        </div>
                     </div>
-                    <div class="right">
-                        <a href="#">News</a>
-                        <a href="#">Events</a>
-                        <a href="#">Contact</a>
-                        <a href="#">Legals</a>
-                    </div>
                 </div>
-                <div class="footer-content">
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
+                <div className="w-full lg:w-1/3 mt-2 lg:mt-0">
+                    <div className="text-center lg:text-right">
+                        &copy; 2023 WIS-SERWIS
+                    </div>
                 </div>
             </div>
         </footer>

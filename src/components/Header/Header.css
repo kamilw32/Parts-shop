@@ -1,20 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.logo {
+    max-height: 100%; /* lub inny rozmiar, który Ci odpowiada */
+    /* Dodatkowe style, jeśli są potrzebne */
+  }
+  /* Styl dla nagłówka */
+p.header {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+/* Styl dla linków */
+a {
+  color: #bcbcbc;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s;
 
-.bggray{
-    background-color: rgb(32, 32, 32);
+  
+  
 }
 
-header a {
-    margin-top: 0 !important;
+/* Styl dla linków przy najechaniu myszką */
+a:hover {
+  color: white;
 }
-p1 {
-    max-width: 10%;
 
-    
-}
-header{
-    max-height: 100px;
-
-}
