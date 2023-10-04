@@ -1,0 +1,5 @@
+[
+    { "plan": "Basic", "price": "$9.99/month", "features": ["Feature 1", "Feature 2", "Feature 3"] },
+    { "plan": "Standard", "price": "$19.99/month", "features": ["Feature 1", "Feature 2", "Feature 3", "Feature 4"] },
+    { "plan": "Premium", "price": "$29.99/month", "features": ["Feature 1", "Feature 2", "Feature 3", "Feature 4", "Feature 5"] }
+]

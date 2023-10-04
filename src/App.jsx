@@ -7,14 +7,16 @@ import { Route, Routes } from 'react-router-dom';
 import Products from './components/Products/Products';
 import Home from './components/Home/Home';
 import PricingTable from './components/PricingTable/PricingTable.js';
+import { Toaster } from 'sonner';
 
 const App = () => (
-  <div className="App">
-    <Header />
-    <div className="content">
+  <div className="App flex flex-col h-screen ">
+    <div className="content flex-1">
+     <Header />
+
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/kontakt" element={<ContactUs />} />
+      <Route path="/kontakt" element={<ContactUs path="contact"/>} />
       <Route path="/o-nas" element={<AboutUs />} />
       <Route path="/nasza-oferta" element={<Products />} />
       <Route path="/cennik" element={<PricingTable/>}/>
@@ -22,6 +24,7 @@ const App = () => (
     </Routes>
     </div>
     <Footer/>
+    <Toaster richColors  />
   </div>
   
 );

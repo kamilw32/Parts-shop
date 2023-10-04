@@ -1,91 +1,89 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
-const ContactUs = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+import { toast } from "sonner";
+import products from "../../data/products.json";
+
+const ContactUs = ({path}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(null);
+  const form = useRef()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setIsSubmitting(true);
-
     try {
-      await emailjs.sendForm(
-        'hubertService',
-        'templateTest',
-        e.target,
-        'r84unY-uLBInX4Cwy'
+       const sendEmail = await emailjs.sendForm(
+        'wisserwis_sdfjty7uefr',
+        'template_p2oxd3w',
+        form.current,
+        "CdtvpdQmCCCIKkwdG"
       );
-      setSubmitSuccess(true);
-    } catch (error) {
-      setSubmitError("Ups.. Wychodzi na to że mamy problem z wysaniem Twojej wiadomści, spróbuj ponownie później lub wyślij nam maila na adres biuro@wisserwis.com");
-    } finally {
+
+      if (sendEmail.status !== 200) {
+        return toast.error("Błąd, spróbuj ponownie później lub wyślij nam maila na adres zawarty w stopce.", { duration: 5000})
+      }
+
+      
+      e.target.reset();
       setIsSubmitting(false);
+      return  toast.success("Wysłano wiadomość", { duration: 5000})
     }
-    setName("");
-    setEmail("");
-    setMessage("");
+    catch (error) {
+
+      setIsSubmitting(false);
+      return toast.error("Błąd, spróbuj ponownie później lub wyślij nam maila na adres zawarty w stopce.", { duration: 5000})
+    }
   };
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
-
+ 
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-8">Skontaktuj się z nami: </h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
+      <h1 className="text-3xl font-bold mb-8">Skontaktuj się z nami</h1>
+      <form onSubmit={handleSubmit} ref={form} className="w-full max-w-lg mx-auto">
+
+      <div className="mb-4">
+
+        <select name="product" className="shadow border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <option className="text-gray-500" disabled selected>Wybierz produkt</option>
+          <option value="Inny">Inny</option>
+      {products.map((item) => 
+          <option key={item.id} value={item.title}>{item.title}</option>
+      )}
+        </select>
+     
+       </div>
+
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
-            Imię:
-          </label>
+         
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="name"
             type="text"
             name="name"
-            value={name}
-            onChange={handleNameChange}
             required
+            placeholder="Imię"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-            Email:
-          </label>
+          
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
             name="email"
-            value={email}
-            onChange={handleEmailChange}
             required
+            placeholder="Email"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
-            Treść
-          </label>
+        
           <textarea
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-1/2"
-            id="message"
-            name="message"
+            id="wiadomosc"
+            name="wiadomosc"
             rows="10"
-            value={message}
-            onChange={handleMessageChange}
             required
+            placeholder="Wiadomość"
           ></textarea>
         </div>
         <div className="flex items-center justify-between">
@@ -97,12 +95,7 @@ const ContactUs = () => {
           >
             {isSubmitting ? 'Wysyłanie...' : 'Wyślij'}
           </button>
-          {submitSuccess && (
-            <span className="text-green-500 font-bold">Wysłano!</span>
-          )}
-          {submitError && (
-            <span className="text-red-500 font-bold">{submitError}</span>
-          )}
+
         </div>
       </form>
     </div>

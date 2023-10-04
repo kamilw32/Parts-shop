@@ -1,44 +1,37 @@
 import React from 'react';
-import { useState } from 'react';
 import '../AboutUs/AboutUs.css'
-import Footer from '../Footer/Footer';
 
 const AboutUs = () => {
     return (
         <div className="flex flex-col items-center galleryflex">
-            <h1 className="text-4xl font-bold text-gray-800 mt-10 mb-6">About Us</h1>
+            <h1 className="text-4xl font-bold text-gray-800 mt-10 mb-6">Nasza działalność</h1>
             <div className="flex flex-col md:flex-row w-full max-w-7xl">
                 <div className="md:w-1/2 p-6">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Mission</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Kim jesteśmy?</h2>
                     <p className="text-gray-700 mb-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut leo
-                        ut justo commodo fermentum eu eget nisl. Nunc volutpat, lorem nec
-                        mollis rutrum, quam odio tincidunt orci, eu bibendum risus elit sed
-                        sem. Duis imperdiet consectetur felis, eget pellentesque augue
-                        tristique a. Mauris vel ante nulla.
+                    Nasza firma to dynamiczna organizacja, która istnieje od już 20 lat. Zlokalizowani jesteśmy w malowniczym Brzesku, gdzie nasi pracownicy oddają się swojej pracy z ogromnym zaangażowaniem. Dzięki naszemu zespołowi, tworzymy innowacyjne rozwiązania i dostarczamy produkty najwyższej jakości. Nasza pasja do tego, co robimy, jest widoczna w każdym projekcie, który realizujemy. Razem tworzymy historię sukcesu, a nasza długoletnia obecność na rynku to dowód na naszą nieustającą determinację.
                     </p>
                     <p className="text-gray-700 mb-6">
-                        Nullam bibendum nisi nec lacus maximus lacinia. Morbi tempor mauris
-                        sit amet justo consequat porttitor. Nullam dictum semper quam, ac
-                        tristique leo placerat at. Proin eget ultrices leo, nec eleifend
-                        lacus. In ac nulla non libero rhoncus vestibulum.
-                    </p>
+                    Nasz zespół to nie tylko doświadczeni specjaliści, ale także ludzie, którzy wspólnie tworzą przyjazną atmosferę pracy. Dążymy do ciągłego doskonalenia naszych umiejętności, aby sprostać rosnącym wymaganiom rynku. Jednak to nasza pasja, zaangażowanie i zaufanie naszych klientów, które cieszą się naszymi produktami i usługami, są głównym źródłem naszej motywacji.
+
+Jesteśmy dumni z tego, co osiągnęliśmy przez te 20 lat i z niecierpliwością patrzymy w przyszłość. Nasza firma nieustannie się rozwija i wprowadza nowe inicjatywy, aby lepiej służyć naszym klientom. Dziękujemy za zaufanie, jakim nas obdarzacie, i zapraszamy Was do odkrywania naszych produktów oraz dołączania do naszej historii sukcesu.                    </p>
                 </div>
                 <div className="md:w-1/2 p-6">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Gallery</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Galeria</h2>
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full sm:w-1/2 p-4">
+
                             <img
                                 className="rounded-lg shadow-md h-64 w-full object-cover object-center"
-                                src="https://source.unsplash.com/random/800x800?sig=1"
-                                alt="Gallery item"
+                                src="/cnc.jpeg"
+                                alt="CNC machine"
                             />
                         </div>
                         <div className="w-full sm:w-1/2 p-4">
-                            <img
+                        <img
                                 className="rounded-lg shadow-md h-64 w-full object-cover object-center"
-                                src="https://source.unsplash.com/random/800x800?sig=2"
-                                alt="Gallery item"
+                                src="/cnc.jpeg"
+                                alt="CNC machine"
                             />
                         </div>
                     </div>

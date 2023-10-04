@@ -1,26 +1,60 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom'; // Dodaj import NavLink
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom'; // Dodaj import NavLink
 import { useMediaQuery } from 'react-responsive';
 import logo from '../../images/logo.png';
 import './Header.css';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 const Header = () => {
   const isSmallScreen = useMediaQuery({ query: '(max-width: 1024px)' });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {pathname} = useLocation()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+  const [isIntersecting, setIntersecting] = useState(false);
+  const ref = useRef(null);
+
+  console.log(isIntersecting);
+  useEffect(() => {
+    let observer;
+    const handleObserver = (entries) => {
+      const entry = entries[0];
+
+      return entry && entry.isIntersecting ? setIntersecting(true) : setIntersecting(false);
+    };
+
+    if (ref.current) {
+      observer = new IntersectionObserver(handleObserver);
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, [ref]);
+
   return (
-    <header className={`bg-gray-800 ${isMenuOpen ? 'open' : ''}`}>
-      <nav className="flex text-gray-300 overflow-hidden  items-center justify-between lg:mx-32 mx-5 h-[64px] p-1">
-        <Link to="/" className="text-white hover:text-gray-300 transition duration-300 h-[50px] overflow-hidden ">
-          <img src={logo} alt="Logo" className='w-full h-full object-fill ' />
-        </Link>
+    <header ref={ref} className={twJoin("w-full h-[64px] ",
+      pathname === "/" ? "bg-transparent" : "bg-black",
+
+    )}>
+      <nav className={twMerge("flex text-white relative items-center px-5 py-3 justify-between h-[64px]",
+        pathname === "/" && !isIntersecting ? "bg-black " : "",
+        !isIntersecting ? " fixed top-0 z-[21] w-full bg-black" : " relative top-0 bg-transparent z-[21] w-full"
+
+      )}>
+        <NavLink to="/" className="text-white hover:text-gray-300 transition-all h-[50px] ">
+          <img src={logo} alt="Logo" className='w-full h-full  ' />
+        </NavLink>
         {isSmallScreen ? (
           <button
-            className={`block text-gray-300 hover:text-white focus:text-white focus:outline-none ${isMenuOpen ? 'hidden' : 'visible'
+            className={`block text-white hover:text-gray-300 focus:text-white focus:outline-none ${isMenuOpen ? 'hidden' : 'visible'
               }`}
             onClick={toggleMenu}
           >
@@ -45,13 +79,14 @@ const Header = () => {
             </svg>
           </button>
         ) : (
-          <ul className="flex text-gray-300">
+          <ul className="flex text-gray-300 uppercase">
             <li>
               <NavLink
                 exact
                 to="/"
-                activeClassName="bg-gray-200 hover:bg-gray-300 text-black"
-                className="hover:text-black hover:bg-gray-200 px-5 py-4 text-base font-medium header-element transition duration-300"
+                className={({isActive, isPending})=>
+                  isPending ? "pending" : isActive ? "hover:border-white border-gray-300 border-b ease-in px-5 py-4 text-base font-medium header-element transition-all" : "hover:border-white border-b-transparent border-b ease-in px-5 py-4 text-base font-medium header-element transition-all"
+                }
               >
                 START
               </NavLink>
@@ -59,17 +94,19 @@ const Header = () => {
             <li>
               <NavLink
                 to="/nasza-oferta"
-                activeClassName="bg-gray-200 hover:bg-gray-300 text-black"
-                className="hover:text-black hover:bg-gray-200 px-5 py-4 text-base font-medium header-element transition duration-300"
+                className={({isActive, isPending})=>
+                  isPending ? "pending" : isActive ? "hover:border-white border-gray-300 border-b ease-in px-5 py-4 text-base font-medium header-element transition-all" : "hover:border-white border-b-transparent border-b ease-in px-5 py-4 text-base font-medium header-element transition-all"
+                }
               >
-                NASZA OFERTA
+                Katalog
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/o-nas"
-                activeClassName="bg-gray-200 hover:bg-gray-300 text-black"
-                className="hover:text-black hover:bg-gray-200 px-5 py-4 text-base font-medium header-element transition duration-300"
+                className={({isActive, isPending})=>
+                  isPending ? "pending" : isActive ? "hover:border-white border-gray-300 border-b ease-in px-5 py-4 text-base font-medium header-element transition-all" : "hover:border-white border-b-transparent border-b ease-in px-5 py-4 text-base font-medium header-element transition-all"
+                }
               >
                 O NAS
               </NavLink>
@@ -77,8 +114,9 @@ const Header = () => {
             <li>
               <NavLink
                 to="/kontakt"
-                activeClassName="bg-gray-200 hover:bg-gray-300 text-black"
-                className="hover:text-black hover:bg-gray-200 px-5 py-4 text-base font-medium header-element transition duration-300"
+                className={({isActive, isPending})=>
+                  isPending ? "pending" : isActive ? "hover:border-white border-gray-300 border-b ease-in px-5 py-4 text-base font-medium header-element transition-all" : "hover:border-white border-b-transparent border-b ease-in px-5 py-4 text-base font-medium header-element transition-all"
+                }
               >
                 KONTAKT
               </NavLink>
@@ -89,17 +127,17 @@ const Header = () => {
       {isSmallScreen && (
         <>
           <div
-            className={`fixed inset-0 bg-gray-800 transition-opacity ${isMenuOpen ? 'opacity-75 visible' : 'opacity-0 invisible'
+            className={`absolute inset-0 h-screen bg-gray-800 transition-opacity  ${isMenuOpen ? 'opacity-75 visible' : 'opacity-0 invisible'
               } z-50`}
             onClick={toggleMenu}
           ></div>
           <div
-            className={`fixed inset-y-0 right-0 w-full max-w-md bg-white overflow-y-auto transition duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            className={`absolute h-screen top-0 right-0 w-full max-w-md bg-white  transition-all transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
               } z-50`}
           >
-            <div className="p-4">
+            <div className="p-4 grid">
               <button
-                className="text-gray-700 hover:text-gray-900 focus:text-gray-900 focus:outline-none"
+                className="text-gray-700 place-self-end mr-2 hover:text-gray-900 focus:text-gray-900 focus:outline-none"
                 onClick={toggleMenu}
               >
                 <svg
@@ -122,36 +160,36 @@ const Header = () => {
                   exact
                   to="/"
                   activeClassName="text-gray-900"
-                  className="text-gray-700 hover:text-gray-900 font-medium block transition duration-300"
+                  className="text-gray-700 hover:text-gray-900 font-medium block transition-all"
                 >
-                  Home
+                  Start
                 </NavLink>
               </li>
               <li className="mb-2">
                 <NavLink
-                  to="/products"
+                  to="/nasza-oferta"
                   activeClassName="text-gray-900"
-                  className="text-gray-700 hover:text-gray-900 font-medium block transition duration-300"
+                  className="text-gray-700 hover:text-gray-900 font-medium block transition-all"
                 >
-                  Products
+                  Katalog
                 </NavLink>
               </li>
               <li className="mb-2">
                 <NavLink
-                  to="/about"
+                  to="/o-nas"
                   activeClassName="text-gray-900"
-                  className="text-gray-700 hover:text-gray-900 font-medium block transition duration-300"
+                  className="text-gray-700 hover:text-gray-900 font-medium block transition-all"
                 >
-                  About
+                  O Nas
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/contact"
+                  to="/kontakt"
                   activeClassName="text-gray-900"
-                  className="text-gray-700 hover:text-gray-900 font-medium block transition duration-300"
+                  className="text-gray-700 hover:text-gray-900 font-medium block transition-all"
                 >
-                  Contact
+                  Kontakt
                 </NavLink>
               </li>
             </ul>

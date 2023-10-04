@@ -1,22 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import pricingData from "../../data/pricing.json";
 
 const PricingTable = () => {
   // Tworzenie tablicy z danymi cennika
-  const pricingData = [
-    { plan: 'Basic', price: '$9.99/month', features: ['Feature 1', 'Feature 2', 'Feature 3'] },
-    { plan: 'Standard', price: '$19.99/month', features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'] },
-    { plan: 'Premium', price: '$29.99/month', features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5'] },
-  ];
 
   return (
-    <div>
+    <div className="grid items-center justify-center py-10 flex-1">
       <h1>Pricing</h1>
-      <table>
+      <table className="w-[800px]">
         <thead>
           <tr>
             <th>Plan</th>
             <th>Price</th>
-            <th>Featuressdf</th>
+            <th>Features</th>
           </tr>
         </thead>
         <tbody>
