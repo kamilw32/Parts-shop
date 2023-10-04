@@ -18,7 +18,6 @@ const Header = () => {
   const [isIntersecting, setIntersecting] = useState(false);
   const ref = useRef(null);
 
-  console.log(isIntersecting);
   useEffect(() => {
     let observer;
     const handleObserver = (entries) => {

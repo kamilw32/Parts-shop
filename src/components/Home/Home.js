@@ -3,11 +3,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import './Home.css';
 import images from '../../data/image.json';
 import { SLIDE_DURATION } from '../../constants';
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     // start the automatic slideshow
@@ -55,10 +57,9 @@ const Home = () => {
           <p className="text-lg md:text-xl">Nawiewniki szczelinowe tylko u nas</p>
           <button
             className="bg-white text-black uppercase font-bold px-6 py-3 mt-6 border-black border hover:bg-gray-200"
-            onClick={() => {
-              console.log('Shop Now');
-              return (window.location.href = '/nasza-oferta');
-            }}
+            onClick={() => 
+               navigate('/nasza-oferta')
+            }
           >
             Zakup tutaj
           </button>
