@@ -3,36 +3,39 @@ import emailjs from '@emailjs/browser';
 import { toast } from "sonner";
 import products from "../../data/products.json";
 
-const ContactUs = ({path}) => {
+const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useRef()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit =  (e) => {
+      e.preventDefault();
+      console.log(form.current);
 
-    setIsSubmitting(true);
-    try {
-       const sendEmail = await emailjs.sendForm(
-        'wisserwis_sdfjty7uefr',
-        'template_p2oxd3w',
-        form.current,
-        "CdtvpdQmCCCIKkwdG"
-      );
+      setIsSubmitting(true);
+      emailjs.sendForm(
+      'wisserwis_sdfjty7uefr',
+      'template_p2oxd3w',
+      form.current,
+      "CdtvpdQmCCCIKkwdG"
 
-      if (sendEmail.status !== 200) {
+    ).then((result) => {
+
+      if (result.status !== 200) {
         return toast.error("Błąd, spróbuj ponownie później lub wyślij nam maila na adres zawarty w stopce.", { duration: 5000})
       }
 
-      
       e.target.reset();
       setIsSubmitting(false);
-      return  toast.success("Wysłano wiadomość", { duration: 5000})
-    }
-    catch (error) {
+      return toast.success("Wysłano wiadomość", { duration: 5000})
 
+    }, (error) => {
+
+      console.error(error);
       setIsSubmitting(false);
-      return toast.error("Błąd, spróbuj ponownie później lub wyślij nam maila na adres zawarty w stopce.", { duration: 5000})
-    }
+      return toast.error(error.text, { duration: 5000})
+
+    });
   };
 
  
@@ -43,7 +46,7 @@ const ContactUs = ({path}) => {
 
       <div className="mb-4">
 
-        <select name="product" className="shadow border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <select id="produkt" name="produkt" className="shadow border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
           <option className="text-gray-500" disabled selected>Wybierz produkt</option>
           <option value="Inny">Inny</option>
       {products.map((item) => 
@@ -60,8 +63,8 @@ const ContactUs = ({path}) => {
             id="name"
             type="text"
             name="name"
-            required
             placeholder="Imię"
+            required
           />
         </div>
         <div className="mb-4">
@@ -71,16 +74,16 @@ const ContactUs = ({path}) => {
             id="email"
             type="email"
             name="email"
-            required
             placeholder="Email"
+            required
           />
         </div>
         <div className="mb-4">
         
           <textarea
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-1/2"
-            id="wiadomosc"
-            name="wiadomosc"
+            id="message"
+            name="message"
             rows="10"
             required
             placeholder="Wiadomość"
