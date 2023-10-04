@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import './Home.css';
-import Image1 from '../../images/1P.jpeg';
-import Image2 from '../../images/2P.jpeg';
-import Image3 from '../../images/4P.jpeg';
-import Image4 from '../../images/5P.jpeg';
-import Image5 from '../../images/6P.jpeg';
-import Image6 from '../../images/7P.jpeg';
-import Image7 from '../../images/8P.jpeg';
+import images from '../../data/image.json';
+import { SLIDE_DURATION } from '../../constants';
 
-const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7];
-const SLIDE_DURATION = 5000; // duration of each slide in milliseconds
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -39,14 +32,15 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div className="relative overflow-hidden hero-content">
+    <div className='-mt-[64px] relative'>
+
+      <div className="relative overflow-hidden h-screen ">
         {/* image container */}
         <div className="absolute inset-0 z-0">
           {images.map((image, i) => (
             <img
               key={i}
-              src={image}
+              src={image.imageURL}
               alt=""
               loading='lazy'
               className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 ${i === index ? 'opacity-100' : 'opacity-0'
@@ -56,17 +50,17 @@ const Home = () => {
         </div>
 
         {/* overlay */}
-        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">A dzien dobry</h1>
-          <p className="text-lg md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className="absolute inset-0 z-10 flex flex-col justify-end mb-40 ml-40 items-start text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Wis serwis</h1>
+          <p className="text-lg md:text-xl">Nawiewniki szczelinowe tylko u nas</p>
           <button
-            className="bg-white text-black font-bold px-6 py-3 mt-6 rounded-lg hover:bg-gray-200"
+            className="bg-white text-black uppercase font-bold px-6 py-3 mt-6 border-black border hover:bg-gray-200"
             onClick={() => {
               console.log('Shop Now');
               return (window.location.href = '/nasza-oferta');
             }}
           >
-            Shop Now
+            Zakup tutaj
           </button>
         </div>
 
@@ -85,21 +79,6 @@ const Home = () => {
         </button>
       </div>
 
-      {/* Our Products Section */}
-      <div className="bg-black h-screen-100% text-white">
-        <div className="container mx-auto py-12 gap-4">
-          <h2 className="text-4xl md:text-6xl font-bold  mb-8">Our Products</h2>
-          <div className="w-full flex items-center justify-center ">
-            <div className="w-1/2 md:w-3/4 h-1/4 md:h-1/2">
-              {/* Add content for Our Products section here */}
-              ndfaijbnaijfnaskjfnakfjnalfnaslfnlsaflnasfn
-              
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Featured Items Section */}
       <div className="bg-white h-screen-100% text-black ">
@@ -141,18 +120,25 @@ const Home = () => {
       <div className="bg-gray-800 text-white h-96">
         <div className="container mx-auto py-12">
           <h2 className="text-4xl md:text-6xl font-bold mb-8">Gotowy na zakupy?</h2>
-          <p className="text-lg md:text-xl mb-8">
-          Oferujemy szeroką gamę produktów wysokiej jakości w przystępnych cenach.
-          </p>
-          <p className="text-lg md:text-xl mb-8">
-          Wierzymy w to, że nasze produkty spełniają najwyższe standardy jakości.
-          </p>
-          <button
-            className="bg-white text-gray-800 font-bold py-3 px-6 hover:bg-gray-200"
-            onClick={() => (window.location.href = '/nasza-oferta')}
-          >
-            NASZA OFERTA
-          </button>
+          <div className='w-full flex items-center justify-center'>
+
+            <div className='w-1/2 md:w-3/4 h-1/4 md:h-1/2'>
+
+              <p className="text-lg md:text-xl mb-8">
+              Oferujemy szeroką gamę produktów wysokiej jakości w przystępnych cenach.
+              </p>
+              <p className="text-lg md:text-xl mb-8">
+              Wierzymy w to, że nasze produkty spełniają najwyższe standardy jakości.
+              </p>
+              <button
+                className="bg-white text-gray-800 font-bold py-3 px-6 hover:bg-gray-200"
+                onClick={() => (window.location.href = '/nasza-oferta')}
+                >
+                NASZA OFERTA
+              </button>
+              </div>
+          </div>
+
         </div>
       </div>
 
@@ -172,3 +158,4 @@ const Home = () => {
 };
 
 export default Home;
+
