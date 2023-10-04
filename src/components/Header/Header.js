@@ -39,13 +39,14 @@ const Header = () => {
   }, [ref]);
 
   return (
-    <header ref={ref} className={twJoin("w-full h-[64px] ",
+    <header ref={ref} className={twJoin("w-full h-[64px]  ",
       pathname === "/" ? "bg-transparent" : "bg-black",
 
     )}>
-      <nav className={twMerge("flex text-white relative items-center px-5 py-3 justify-between h-[64px]",
+      <nav className={twMerge("flex text-white relative items-center px-5 py-3 justify-between h-[64px] transition-all duration-300 ease-in bg-blend-difference",
         pathname === "/" && !isIntersecting ? "bg-black " : "",
-        !isIntersecting ? " fixed top-0 z-[21] w-full bg-black" : " relative top-0 bg-transparent z-[21] w-full"
+        !isIntersecting ? " fixed top-0 z-[21] w-full bg-black" : " relative top-0 bg-transparent z-[21] w-full",
+        pathname !== "/" ? "bg-black fixed top-0" : "",
 
       )}>
         <NavLink to="/" className="text-white hover:text-gray-300 transition-all h-[50px] ">

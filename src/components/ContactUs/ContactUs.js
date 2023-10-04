@@ -45,7 +45,7 @@ const ContactUs = () => {
 
       <div className="mb-4">
 
-        <select id="produkt" name="produkt" className="shadow border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <select id="produkt" name="produkt" className="shadow cursor-pointer border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
           <option className="text-gray-500" disabled selected>Wybierz produkt</option>
           <option value="Inny">Inny</option>
       {products.map((item) => 

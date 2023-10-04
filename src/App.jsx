@@ -10,7 +10,10 @@ import PricingTable from './components/PricingTable/PricingTable.js';
 import { Toaster } from 'sonner';
 
 const App = () => (
-  <div className="App flex flex-col h-screen ">
+//  onmount start scroll from top
+
+  
+  <div onLoad={() => {window.scrollTo(0, 0);}} className="App flex flex-col h-screen ">
     <div className="content flex-1">
      <Header />
 
