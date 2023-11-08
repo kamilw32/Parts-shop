@@ -20,16 +20,7 @@ const AboutUs = () => {
                     Skontaktuj się z nami, a niezwłocznie odpowiemy na Twoje pytania oraz pomożemy Ci dobrać i skonfigurować produkt pod Twoje potrzeby.</p>
                 </div>
                 <div className="md:w-1/2 p-6">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Galeria</h2>
                     <div className="flex flex-wrap -mx-4">
-                        <div className="w-full sm:w-1/2 p-4">
-
-                            <img
-                                className="rounded-lg shadow-md h-64 w-full object-cover object-center"
-                                src="/cnc.jpeg"
-                                alt="CNC machine"
-                            />
-                        </div>
                         <div className="w-full sm:w-1/2 p-4">
                         <img
                                 className="rounded-lg shadow-md h-64 w-full object-cover object-center"

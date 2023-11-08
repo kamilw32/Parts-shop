@@ -13,7 +13,7 @@ const App = () => (
 //  onmount start scroll from top
 
   
-  <div onLoad={() => {window.scrollTo(0, 0);}} className="App flex flex-col h-screen ">
+  <div className="App flex flex-col h-screen ">
     <div className="content flex-1">
      <Header />
 

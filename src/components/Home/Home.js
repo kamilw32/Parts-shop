@@ -113,7 +113,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className=" object-cover object-cover text-zinc-200 bg-vents">
+      <section className=" object-cover object-center text-zinc-200 bg-vents">
         <div className="container transition-all mx-auto py-40 ">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-zinc-100 lg:text-left">Zadzwoń Do Nas</h2>
           <div className='w-4/5 md:w-3/4 h-1/4 md:h-1/2 mx-auto flex flex-col items-center justify-center'>

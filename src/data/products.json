@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "NSL/500/75B",
-        "description": "Wymiary: 500mm x 100mm Przepustowość 25-30m³/h Prędkości powietrza 1,5 - 1,7m/s Prędkości powietrza 1,5 - 1,7m/s",
+        "description": "Wymiary: 500mm x 100mm Przepustowość 25-30m³/h Prędkości powietrza 1,5 - 1,7m/s",
         "price": 320,
         "imageUrl": "/NSL_500_75B.jpg",
         "forward": "/kontakt"
