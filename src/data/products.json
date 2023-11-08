@@ -1,74 +1,106 @@
 [
     {
         "id": 1,
-        "title": "NSL/500/75/B",
-        "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 10.99,
+        "title": "NSL/500/75B",
+        "description": "Wymiary: 500mm x 100mm Przepustowość 25-30m³/h Prędkości powietrza 1,5 - 1,7m/s Prędkości powietrza 1,5 - 1,7m/s",
+        "price": 320,
         "imageUrl": "/NSL_500_75B.jpg",
         "forward": "/kontakt"
     },
     {
         "id": 2,
-        "title": "NSL/1000/2/75/B",
+        "title": "NSL/1000/2/75B",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 10.99,
+        "price": 455,
         "imageUrl": "/NSL_1000_2_75B.jpg",
         "forward": "/kontakt"
     },
     {
         "id": 3,
-        "title": "NSL/1500/3/75/B",
+        "title": "NSL/1500/3/75B",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 10.99,
+        "price": 630,
         "imageUrl": "/NSL_1500_3_75B.jpg",
         "forward": "/kontakt"
     },
     {
         "id": 4,
-        "title": "NSL/2000/4/175B",
+        "title": "NSL/2000/4/75B",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 15.99,
+        "price": 810,
         "imageUrl": "/NSL_2000_4_75B.jpg",
         "forward": "/kontakt"
     },
     {
         "id": 5,
-        "title": "NSLP/500/2P",
+        "title": "NSP/500/2P/125",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 25.99,
-        "imageUrl": "/NSLP_500_2P.jpg",
+        "price": 430,
+        "imageUrl": "/NSP_500_2P_125.png",
         "forward": "/kontakt"
     },
     {
         "id": 6,
-        "title": "NSLP/1000/2P",
+        "title": "NSP/1000/2P/2x125",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 590,
-        "imageUrl": "/NSLP_1000_2P.jpg",
+        "price": 610,
+        "imageUrl": "/NSP_1000_2P_2x125.png",
         "forward": "/kontakt"
     },
     {
         "id": 7,
-        "title": "NSLP/2000/2P",
+        "title": "NSP/1500/2P/3x125",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 1080,
-        "imageUrl": "/NSLP_2000_2P.jpg",
+        "price": 810,
+        "imageUrl": "/NSP_1500_2P_3x125.png",
         "forward": "/kontakt"
     },
     {
         "id": 8,
-        "title": "NSP/500/2P",
+        "title": "NSP/2000/2P/4x125",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
-        "price": 1320,
-        "imageUrl": "/NSP_500_2P.jpg",
+        "price": 1050,
+        "imageUrl": "/NSP_2000_2P_4x125.png",
         "forward": "/kontakt"
     },
     {
         "id": 9,
-        "title": "NSP/1000/2P",
+        "title": "NK-RS",
         "description": "Wymiary:1111mm x 1234mm x 1245mm",
         "price": 1320,
-        "imageUrl": "/NSP_1000_2P.jpg",
+        "imageUrl": "/NK_RS.png",
+        "forward": "/kontakt"
+    },
+    {
+        "id": 10,
+        "title": "NKS/500/3P/160",
+        "description": "Wymiary:1111mm x 1234mm x 1245mm",
+        "price": 650,
+        "imageUrl": "/NKS_500_3P_160.png",
+        "forward": "/kontakt"
+    },
+    {
+        "id": 11,
+        "title": "NKS/1000/3P/2x160",
+        "description": "Wymiary:1111mm x 1234mm x 1245mm",
+        "price": 860,
+        "imageUrl": "/NKS_1000_3P_2x160.png",
+        "forward": "/kontakt"
+    },
+    {
+        "id": 12,
+        "title": "NKS/1500/3P/3x160",
+        "description": "Wymiary:1111mm x 1234mm x 1245mm",
+        "price": 1140,
+        "imageUrl": "/NKS_1500_3P_3x160.png",
+        "forward": "/kontakt"
+    },
+    {
+        "id": 13,
+        "title": "NKS/2000/3P/4x160",
+        "description": "Wymiary:1111mm x 1234mm x 1245mm",
+        "price": 1450,
+        "imageUrl": "/NKS_2000_3P_4x160.png",
         "forward": "/kontakt"
     }
 

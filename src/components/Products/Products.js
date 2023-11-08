@@ -19,7 +19,7 @@ const Products = () => {
                         <div className="p-4 grid h-[225px]">
                             <h3 className="font-bold text-xl mb-2">{item.title}</h3>
                             <p className="text-gray-600 text-base line-clamp-2 h-[48.25px]">{item.description}</p>
-                            <p className="font-bold text-xl mt-2 ">{item.price}PLN</p>
+                            <p className="font-bold text-xl mt-2 ">{item.price} PLN netto</p>
                             <a href={item.forward} className='bg-black transition-all w-fit self-end text-white font-bold px-6 py-3 mt-6 rounded-lg hover:bg-opacity-80 translate-all' >
 
                                     Dowiedz się wiecej

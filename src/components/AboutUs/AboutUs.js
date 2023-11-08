@@ -8,13 +8,16 @@ const AboutUs = () => {
             <div className="flex flex-col md:flex-row w-full max-w-7xl">
                 <div className="md:w-1/2 p-6">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Kim jesteśmy?</h2>
-                    <p className="text-gray-700 mb-6">
-                    Nasza firma to dynamiczna organizacja, która istnieje od już 20 lat. Zlokalizowani jesteśmy w malowniczym Brzesku, gdzie nasi pracownicy oddają się swojej pracy z ogromnym zaangażowaniem. Dzięki naszemu zespołowi, tworzymy innowacyjne rozwiązania i dostarczamy produkty najwyższej jakości. Nasza pasja do tego, co robimy, jest widoczna w każdym projekcie, który realizujemy. Razem tworzymy historię sukcesu, a nasza długoletnia obecność na rynku to dowód na naszą nieustającą determinację.
-                    </p>
-                    <p className="text-gray-700 mb-6">
-                    Nasz zespół to nie tylko doświadczeni specjaliści, ale także ludzie, którzy wspólnie tworzą przyjazną atmosferę pracy. Dążymy do ciągłego doskonalenia naszych umiejętności, aby sprostać rosnącym wymaganiom rynku. Jednak to nasza pasja, zaangażowanie i zaufanie naszych klientów, które cieszą się naszymi produktami i usługami, są głównym źródłem naszej motywacji.
-
-Jesteśmy dumni z tego, co osiągnęliśmy przez te 20 lat i z niecierpliwością patrzymy w przyszłość. Nasza firma nieustannie się rozwija i wprowadza nowe inicjatywy, aby lepiej służyć naszym klientom. Dziękujemy za zaufanie, jakim nas obdarzacie, i zapraszamy Was do odkrywania naszych produktów oraz dołączania do naszej historii sukcesu.                    </p>
+                    <p className="text-gray-700 mb-4">
+                    Z przyjemnością przedstawiamy naszą firmę, która istnieje na rynku od 1995 roku. Przez te lata zdobyliśmy ogromne doświadczenie i zyskaliśmy zaufanie licznych klientów. Nasza specjalizacja to projektowanie i budowa systemów wentylacji, a od 2012r. kładziemy nacisk na innowacyjne rozwiązania i autorskie produkty.</p>
+                    <p className="text-gray-700 mb-4">
+                    Naszą dumą są nawiewniki do rekuperacji i klimatyzacji, które powstają przy udziale doświadczonych projektantów i stylistów wnętrz. Kładziemy ogromny nacisk na wysoką sprawność, higienę oraz designerski wygląd naszych produktów. Dzięki temu nasze nawiewniki nie tylko doskonale spełniają swoją funkcję, ale także stanowią wyszukaną formę  uzupełniającą nowoczesny wygląd wnętrza.</p>
+                    <p className="text-gray-700 mb-4">
+                    Nasze portfolio to dziesiątki wdrożonych realizacji i projektów w budownictwie indywidualnym a także przemyśle. Inwestorzy powierzając nam swoje plany są zadowoleni z każdego zrealizowanego projektu.</p>
+                    <p className="text-gray-700 mb-4">
+                    Dysponujemy profesjonalnym i precyzyjnym sprzętem dzięki czemu jesteśmy w stanie sprostać najbardziej skomplikowanym i zaawansowanym projektom. Niezależnie od tego, czy potrzebujesz nawiewników dla dużego obiektu, czy projektu dostosowanego do indywidualnych potrzeb, jesteśmy gotowi, by spełnić Twoje oczekiwania.</p>
+                    <p className="text-gray-700 mb-4">
+                    Skontaktuj się z nami, a niezwłocznie odpowiemy na Twoje pytania oraz pomożemy Ci dobrać i skonfigurować produkt pod Twoje potrzeby.</p>
                 </div>
                 <div className="md:w-1/2 p-6">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Galeria</h2>
