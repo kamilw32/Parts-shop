@@ -39,7 +39,7 @@ const Header = () => {
   }, [ref]);
 
   return (
-    <header ref={ref} className={twJoin("w-full h-[64px]  ",
+    <header ref={ref} className={twJoin("w-full h-[64px]   ",
       pathname === "/" ? "bg-transparent" : "bg-black",
 
     )}>

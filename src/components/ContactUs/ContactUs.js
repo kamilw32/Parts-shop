@@ -40,7 +40,7 @@ const ContactUs = () => {
  
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-8">Skontaktuj się z nami</h1>
+      <h1 className="text-3xl font-bold mb-8 text-zinc-800">Skontaktuj się z nami</h1>
       <form onSubmit={handleSubmit} ref={form} className="w-full max-w-lg mx-auto">
 
       <div className="mb-4">
@@ -90,8 +90,8 @@ const ContactUs = () => {
         </div>
         <div className="flex items-center justify-between">
           <button
-            className={`${isSubmitting ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-700'
-              } text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
+            className={`${isSubmitting ? 'bg-gray-500' : 'bg-gray-800'
+              } transition-all w-fit self-end text-white font-semibold px-4 py-2 mt-6 rounded-sm hover:bg-opacity-80 translate-all`}
             type="submit"
             disabled={isSubmitting}
           >
